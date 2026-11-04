@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+    --red: #ce1126;
+    --gold: #fcd116;
+    --green: #006b3f;
+    --black: #171717;
+    --white: #ffffff;
+    --background: #faf9f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* GHANA FLAG ARTWORK IN THE CORNER */
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -100px;
+    right: -130px;
+    width: 430px;
+    height: 430px;
+    background: url("ghana-flag.jpg") center / contain no-repeat;
+    opacity: 0.13;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    padding: 22px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--green);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--red);
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 75vh;
+    padding: 100px 8%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero h1 {
+    max-width: 750px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero p {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* BUTTONS */
+
+button,
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 25px;
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover,
+.btn:hover {
+    background: var(--red);
+    transform: translateY(-3px);
+}
+
+/* CARDS */
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 14px;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-bottom: 4px solid var(--gold);
+}
+
+/* SECTION HEADINGS */
+
+section {
+    padding: 70px 8%;
+}
+
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 35px 8%;
+    background: var(--black);
+    color: white;
+    text-align: center;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 70px 6%;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    body::before {
+        width: 250px;
+        height: 250px;
+    }
+}
